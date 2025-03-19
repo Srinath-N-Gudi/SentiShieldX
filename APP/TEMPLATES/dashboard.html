@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Dashboard</h2>
+<form action="/add_bot" method="POST">
+    <label for="bot_name">Bot Name:</label>
+    <input type="text" id="bot_name" name="bot_name" required>
+    <label for="community_type">Community Type:</label>
+    <select id="community_type" name="community_type">
+        <option value="discord">Discord</option>
+        <option value="telegram">Telegram</option>
+        <option value="youtube">youtube</option>
+        <option value="instagram">instagram</option>
+    </select>
+    <button type="submit">Add Bot</button>
+</form>
+{% endblock %}
