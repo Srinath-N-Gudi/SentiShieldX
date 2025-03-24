@@ -1,6 +1,85 @@
 {% extends "base.html" %}
 {% block content %}
-<h2>Welcome to the SentiShieldX</h2>
-<p>Add and manage bots for your online communities.</p>
-<a href="{{ url_for('dashboard') }}">Go to Dashboard</a>
+
+<div class="s-main-body">
+    <h1 style="color: white; font-weight: bolder; font-size:90px;">Scaling Truth with AI:</h1>
+    <h2 style="color: #d27b7b; font-weight: bolder; font-size: 80px;">Detect Hate Speech & Fake News</h2>
+
+    <h3 >Analyze Youtube Comments, detect fake websites, and manage AI-powered bots to fight misinformation and hate speech.</h3>
+    <div class="btn-container">
+        <a class="btn s-btn-try-now" role="button" aria-disabled="true" href="#self-trynow-button">Try Now</a>
+        <a class="btn s-btn-learn-more" role="button" aria-disabled="true" href="#self-feature">Learn More</a>
+    </div>
+</div>
+
+<div class="strip">
+    <div class="strip-item">AI-Powered Analysis</div>
+    <div class="strip-item">Real-Time Insights</div>
+    <div class="strip-item">Customizable User Settings</div>
+</div>
+
+<div class="compatible-with">
+    <span>Compatible with:</span>
+    <div class="logo-item">
+    <img src="{{ url_for('static', filename='Images/yt.svg') }}" alt="YouTube Logo">
+    <span>YouTube</span>
+    </div>
+    <div class="logo-item">
+    <img src="{{ url_for('static', filename='Images/discord.svg') }}" alt="Discord Logo">
+    <span>Discord</span>
+    </div>
+    <div class="logo-item">
+    <img src="{{ url_for('static', filename='Images/telegram.svg') }}" alt="Telegram Logo">
+    <span>Telegram</span>
+    </div>
+</div>
+
+<div class="features-section" id="self-feature">
+<h1 style="margin-left: 20px;">Features Offered: </h1>
+<div class="cards-container">
+    <div class="card custom-card" style="width: 18rem;">
+        <img src= "{{ url_for('static', filename='Images/Comment-Analysis.png') }}" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">Youtube Comment Analysis</h5>
+            <p class="card-text">Detect harmful content in Youtube comments with AI. 
+        <br>
+        <br>
+            Enter a Youtube video link, and our AI will analyze comments for hate speech, toxicity, and sentiment
+            <br>
+            <br>
+            Get a detailed report showing the percent of harmful vs. neutral vs. positive comments
+            </p>
+            <a href="#" class="btn btn-primary" id="self-trynow-button">Go to Youtube Comment Analyzer</a>
+        </div>
+        </div>
+        <div class="card custom-card" style="width: 18rem;">
+        <img src="{{ url_for('static', filename='Images/HarmWeb.png') }}" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">Fake Website Detection</h5>
+            <p class="card-text">
+            Check if website is real usign AI. 
+            <br><br>
+            Enter URL, and our system analyzes it's content, credibility, and potential security risks.
+            <br><br>
+            Get a trust score and an explanation of why a site maybe suspicous
+            </p>
+            <a href="#" class="btn btn-primary">Go to  Harmful Websites Analyzer.</a>
+        </div>
+        </div>
+        <div class="card custom-card" style="width: 18rem;">
+        <img src="{{ url_for('static', filename='Images/AI-BOT.png') }}" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">AI-Powered Bot Moderation</h5>
+            <p class="card-text">
+            Our AI-powered bot can monitor and moderate chat in real-time. 
+            <br><br>
+            Works seamlessly with Discord & Telegram to detect harmful content in messages. 
+            <br><br>
+            Users can custamize bot settings to control filtering levels.
+            </p>
+            <a href="#" class="btn btn-primary">Add AI-Bot Now</a>
+        </div>
+        </div>
+</div>
+</div>
 {% endblock %}
