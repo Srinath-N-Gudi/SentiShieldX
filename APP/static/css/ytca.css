@@ -1,6 +1,6 @@
-/* YouTube Comment Analysis Page */
+
 .ytca-container {
-    background-color: #01162d; /* Same as your main background */
+    background-color: #01162d;
     min-height: 80vh;
     display: flex;
     flex-direction: column;
@@ -17,9 +17,9 @@
   
   .input-group {
     display: flex;
-    box-shadow: 0 4px 20px rgba(210, 123, 123, 0.3); /* Pinkish glow */
-    border-radius: 50px; /* Rounded edges */
-    overflow: hidden; /* Keeps child elements within rounded border */
+    box-shadow: 0 4px 20px rgba(210, 123, 123, 0.3); 
+    border-radius: 50px; 
+    overflow: hidden;
   }
   
   .ytca-input {
@@ -36,7 +36,7 @@
   }
   
   .ytca-button {
-    background-color: #d27b7b; /* Pinkish color */
+    background-color: #d27b7b;
     color: white;
     border: none;
     padding: 15px 30px;
@@ -47,14 +47,12 @@
   }
   
   .ytca-button:hover {
-    background-color: #b26262; /* Darker pink on hover */
+    background-color: #b26262; 
   }
   
-  /* Font Awesome for the icon (add this to base.html <head>) */
-  @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css");
 
 
-  /* Results Section */
 .results-container {
     display: flex;
     gap: 40px;
@@ -94,7 +92,6 @@
     text-align: center;
   }
   
-  /* Responsive */
   @media (max-width: 768px) {
     .results-container {
       flex-direction: column;
@@ -106,7 +103,6 @@
     }
   }
 
-/* Loading Spinner (Persistent) */
 .loading-spinner {
   text-align: center;
   color: white;
@@ -128,7 +124,6 @@
   100% { transform: rotate(360deg); }
 }
 
-/* Error State */
 .error {
   color: #ff4d4d;
   text-align: center;
