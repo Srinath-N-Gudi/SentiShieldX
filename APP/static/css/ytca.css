@@ -1,0 +1,146 @@
+/* YouTube Comment Analysis Page */
+.ytca-container {
+    background-color: #01162d; /* Same as your main background */
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .ytca-form {
+    width: 100%;
+    max-width: 800px;
+  }
+  
+  .input-group {
+    display: flex;
+    box-shadow: 0 4px 20px rgba(210, 123, 123, 0.3); /* Pinkish glow */
+    border-radius: 50px; /* Rounded edges */
+    overflow: hidden; /* Keeps child elements within rounded border */
+  }
+  
+  .ytca-input {
+    flex: 1;
+    padding: 15px 25px;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    font-size: 1.1rem;
+  }
+  
+  .ytca-input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+  }
+  
+  .ytca-button {
+    background-color: #d27b7b; /* Pinkish color */
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .ytca-button:hover {
+    background-color: #b26262; /* Darker pink on hover */
+  }
+  
+  /* Font Awesome for the icon (add this to base.html <head>) */
+  @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css");
+
+
+  /* Results Section */
+.results-container {
+    display: flex;
+    gap: 40px;
+    margin-top: 30px;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .chart-container {
+    width: 300px;
+    height: 300px;
+  }
+  
+  .analysis-description {
+    max-width: 400px;
+    color: white;
+    text-align: left;
+  }
+  
+  .analysis-description p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+  
+  .verdict-box {
+    background-color: rgba(210, 123, 123, 0.2);
+    border-left: 4px solid #d27b7b;
+    padding: 15px;
+    margin-top: 20px;
+    border-radius: 0 5px 5px 0;
+  }
+  
+  .loading {
+    color: white;
+    font-size: 1.2rem;
+    text-align: center;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .results-container {
+      flex-direction: column;
+      gap: 20px;
+    }
+    
+    .analysis-description {
+      text-align: center;
+    }
+  }
+
+/* Loading Spinner (Persistent) */
+.loading-spinner {
+  text-align: center;
+  color: white;
+  margin-top: 50px;
+}
+
+.spinner {
+  border: 5px solid rgba(210, 123, 123, 0.2);
+  border-top: 5px solid #d27b7b;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 20px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Error State */
+.error {
+  color: #ff4d4d;
+  text-align: center;
+  padding: 20px;
+}
+
+.retry-btn {
+  background-color: #d27b7b;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin-top: 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}

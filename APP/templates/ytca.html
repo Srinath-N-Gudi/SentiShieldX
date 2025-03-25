@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="ytca-container">
+  <h1 style="color: #d27b7b; font-size: 3rem; margin-bottom: 30px;">YouTube Comment Analysis</h1>
+  
+  <!-- Input Form -->
+  <form class="ytca-form" id="analysis-form">
+    <div class="input-group">
+      <input 
+        type="text" 
+        id="youtube-url"
+        class="form-control ytca-input" 
+        placeholder="Paste YouTube video URL here..."
+        required
+      >
+      <button class="btn ytca-button" type="submit">
+        Analyze <i class="fas fa-search"></i>
+      </button>
+    </div>
+  </form>
+
+  <!-- Results Section (Initially Hidden) -->
+  <div id="results-section" style="display: none;">
+    <div class="results-container">
+      <!-- Pie Chart -->
+      <div class="chart-container">
+        <canvas id="sentimentChart" width="300" height="300"></canvas>
+      </div>
+
+      <!-- Analysis Description -->
+      <div class="analysis-description">
+        <h3 style="color: #d27b7b;">Analysis Results</h3>
+        <p id="sentiment-stats"></p>
+        <div id="video-verdict" class="verdict-box"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Chart.js for Pie Chart -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="{{ url_for('static', filename='js/ytca.js')}}"></script>
+{% endblock %}
