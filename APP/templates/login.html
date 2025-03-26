@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SentiShieldX | Login In</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/signup_page.css') }}">
+</head>
+<body>
+    <!-- Liquid Background -->
+    <div class="liquid-bg"></div>
+
+    <!-- Particles -->
+    <div class="particles" id="particles"></div>
+
+    <div class="signup-container">
+        <!-- Left Side (Branding) -->
+        <div class="signup-left">
+            <div class="logo">
+                <img src="{{ url_for('static', filename='Images/SSX.png') }}" alt="SentiShieldX Logo">
+                <h1>SentiShield<span>X</span></h1>
+            </div>
+            <p class="tagline">Join the fight against misinformation with AI-powered sentiment analysis</p>
+        </div>
+
+        <!-- Right Side (Form) -->
+        <div class="signup-right">
+            <div class="signup-card">
+                <h2>Login</h2>
+                <p class="subtext">Unlock full access to our analysis tools</p>
+
+                <!-- Flask-ready Form -->
+                <form id="signup-form" action="{{ url_for('login') }}" method="POST">
+                    <div class="input-group">
+                        <i class="fas fa-user"></i>
+                        <input type="text" name="username" placeholder="Username/Email" required>
+                    </div>
+                    <div class="input-group">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" name="password" placeholder="Password" required>
+                        <i class="fas fa-eye toggle-password"></i>
+                    </div>
+                    <button type="submit" class="signup-btn">
+                        Sign Up <i class="fas fa-arrow-right"></i>
+                    </button>
+                </form>
+
+                <!-- Flash Messages -->
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                    {% if messages %}
+                        <div class="flash-messages">
+                            {% for category, message in messages %}
+                                <div class="flash {{ category }}">{{ message }}</div>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                {% endwith %}
+
+                <div class="divider">
+                    <span>Or continue with</span>
+                </div>
+
+                <div class="social-login">
+                    <button type="button" class="google-btn">
+                        <img src="{{ url_for('static', filename='Images/google-image.svg') }}" alt="Google">
+                        Google
+                    </button>
+                    <button type="button" class="github-btn">
+                        <i class="fab fa-github"></i>
+                        GitHub
+                    </button>
+                </div>
+
+                <p class="login-link">
+                    Don' have an account? <a href="{{ url_for('signup') }}">Sign Up</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -36,6 +36,22 @@ def index():
 def ytca():
     return render_template('ytca.html')
 
+
+@app.route('/signup', methods=['GET', 'POST'])
+def signup():
+    if request.method == 'POST':
+        flash('This is a demo message. Backend not connected yet.', 'error')
+        return redirect(url_for('signup'))
+    return render_template('signup.html')
+
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    if request.method == 'POST':
+        flash('This is a demo message. Backend not connected yet.', 'error')
+        return redirect(url_for('login'))
+    return render_template('login.html')
+
+
 @app.route('/analyze', methods=['POST'])
 def analyze_comments():
     video_url = request.form.get('url')
