@@ -32,23 +32,6 @@ function createParticles() {
         container.appendChild(particle);
     }
 }
-
-// ===== [ Form Submission ] =====
-document.getElementById('signup-form').addEventListener('submit', function(e) {
-    e.preventDefault();
-    
-    // Demo - Replace with actual Flask submission
-    const submitBtn = this.querySelector('button[type="submit"]');
-    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing';
-    submitBtn.disabled = true;
-    
-    setTimeout(() => {
-        submitBtn.innerHTML = 'Sign Up <i class="fas fa-arrow-right"></i>';
-        submitBtn.disabled = false;
-        alert('Form is pre-wired for Flask!\n(Backend not connected yet)');
-    }, 1500);
-});
-
 // Initialize
 createParticles();
 window.addEventListener('resize', createParticles);

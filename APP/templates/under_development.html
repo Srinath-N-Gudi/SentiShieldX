@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feature Coming Soon | SentiShieldX</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-dark: #02101d;
+            --primary-accent: #d27b7b;
+            --accent-glow: rgba(210, 123, 123, 0.4);
+        }
+        
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--primary-dark);
+            color: white;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .liquid-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+        
+        .liquid-bg::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
+            animation: liquid-move 15s infinite linear;
+            opacity: 0.3;
+        }
+        
+        .content {
+            max-width: 800px;
+            padding: 2rem;
+            z-index: 2;
+        }
+        
+        h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(to right, #d27b7b, #ff9e9e);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .wizard-container {
+            display: flex;
+            justify-content: center;
+            margin: 3rem 0;
+        }
+        
+        .wizard {
+            width: 150px;
+            height: 150px;
+            background: url('{{ url_for("static", filename="Images/AI-BOT.png") }}') center/contain no-repeat;
+            filter: drop-shadow(0 0 15px var(--accent-glow));
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .home-btn {
+            display: inline-block;
+            margin-top: 2rem;
+            padding: 12px 30px;
+            background: linear-gradient(135deg, var(--primary-accent), #e89191);
+            color: white;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            box-shadow: 0 5px 15px rgba(210, 123, 123, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .home-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(210, 123, 123, 0.4);
+        }
+        
+        @keyframes liquid-move {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+    </style>
+</head>
+<body>
+    <div class="liquid-bg"></div>
+    
+    <div class="content">
+        <h1>Feature In Development</h1>
+        <p style="font-size: 1.2rem; max-width: 600px; margin: 0 auto;">
+            Our team of AI wizards is working around the clock to brew this feature with extra magic!
+            Expect some powerful capabilities coming soon.
+        </p>
+        
+        <div class="wizard-container">
+            <div class="wizard"></div>
+        </div>
+        
+        <a href="{{ url_for('index') }}" class="home-btn">
+            <i class="fas fa-arrow-left"></i> Back to Home
+        </a>
+    </div>
+</body>
+</html>

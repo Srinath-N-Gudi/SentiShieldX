@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SentiShieldX | Login In</title>
+    <title>SentiShieldX | Login</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/signup_page.css') }}">
@@ -22,20 +22,20 @@
                 <img src="{{ url_for('static', filename='Images/SSX.png') }}" alt="SentiShieldX Logo">
                 <h1>SentiShield<span>X</span></h1>
             </div>
-            <p class="tagline">Join the fight against misinformation with AI-powered sentiment analysis</p>
+            <p class="tagline">Welcome back to AI-powered sentiment analysis</p>
         </div>
 
         <!-- Right Side (Form) -->
         <div class="signup-right">
             <div class="signup-card">
                 <h2>Login</h2>
-                <p class="subtext">Unlock full access to our analysis tools</p>
+                <p class="subtext">Access your dashboard and tools</p>
 
                 <!-- Flask-ready Form -->
-                <form id="signup-form" action="{{ url_for('login') }}" method="POST">
+                <form id="login-form" action="{{ url_for('login') }}" method="POST">
                     <div class="input-group">
                         <i class="fas fa-user"></i>
-                        <input type="text" name="username" placeholder="Username/Email" required>
+                        <input type="text" name="email" placeholder="Email" required>
                     </div>
                     <div class="input-group">
                         <i class="fas fa-lock"></i>
@@ -43,7 +43,7 @@
                         <i class="fas fa-eye toggle-password"></i>
                     </div>
                     <button type="submit" class="signup-btn">
-                        Sign Up <i class="fas fa-arrow-right"></i>
+                        Login <i class="fas fa-arrow-right"></i>
                     </button>
                 </form>
 
@@ -74,10 +74,11 @@
                 </div>
 
                 <p class="login-link">
-                    Don' have an account? <a href="{{ url_for('signup') }}">Sign Up</a>
+                    Don't have an account? <a href="{{ url_for('signup') }}">Sign Up</a>
                 </p>
             </div>
         </div>
     </div>
+    <script src="{{ url_for('static', filename='js/signup_page.js') }}"></script>
 </body>
-</html>
+</html> 

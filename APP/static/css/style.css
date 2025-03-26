@@ -453,3 +453,70 @@ html, body {
   background-color: #d27b7b; 
   color: white; 
 }
+
+.dev-notification {
+  position: fixed;
+  bottom: -150px;
+  right: 20px;
+  width: 350px;
+  background: linear-gradient(135deg, #02101d, #0a2a4a);
+  border-left: 4px solid #d27b7b;
+  border-radius: 8px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  z-index: 1000;
+  overflow: hidden;
+  transition: all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  opacity: 0;
+}
+
+.dev-notification.show {
+  bottom: 20px;
+  opacity: 1;
+}
+
+.dev-content {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  color: white;
+}
+
+.dev-icon {
+  margin-right: 15px;
+  animation: pulse 2s infinite;
+}
+
+.dev-text h3 {
+  color: #d27b7b;
+  margin: 0 0 5px 0;
+  font-size: 1.1rem;
+}
+
+.dev-text p {
+  margin: 0;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.dev-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.dev-close:hover {
+  color: #d27b7b;
+  transform: scale(1.2);
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
