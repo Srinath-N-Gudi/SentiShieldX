@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% block content %}
+
+<!-- Hero Section -->
+<div class="telegram-setup-hero">
+  <div class="container">
+    <h1>Connect <span>SentiShieldX</span> to Telegram</h1>
+    <p>Follow these steps to activate AI-powered moderation in your group.</p>
+  </div>
+</div>
+
+<!-- Setup Container -->
+<div class="telegram-setup-container">
+  <!-- QR Code + Link Section -->
+  <div class="telegram-connect-section">
+    <div class="telegram-qr-card">
+      <div class="qr-code">
+        <!-- Replace with actual QR code image -->
+        <img src="{{ url_for('static', filename='Images/telegram-qr.png') }}" alt="Telegram Bot QR Code">
+      </div>
+      <div class="telegram-link">
+        <h3>Quick Connect</h3>
+        <p>Scan this QR code or click the link below:</p>
+        <a href="https://t.me/SentiShield_Bot" class="telegram-direct-link">
+          <i class="fab fa-telegram"></i> t.me/SentiShield_Bot
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Verification Code Section -->
+  <div class="verification-section">
+    <h2><i class="fas fa-shield-alt"></i> Registration Process</h2>
+    <div class="verification-code-display">
+      <span class="code-label">Your Unique Code:</span>
+      <div class="verification-code">{{ user_uuid }}</div>
+    </div>
+
+    <!-- Instructions -->
+    <div class="instructions">
+      <h3>Follow these steps:</h3>
+      <ol>
+        <li><strong>Open</strong> the Telegram bot using the QR code/link above.</li>
+        <li>Type <code>/start</code> to initiate the bot.</li>
+        <li>Enter <code>/register {{ user_uuid }}</code></li>
+        <li>Enter <code>/verify {{ verification_code }}</code></li>
+        <li>The bot will confirm successful registration.</li>
+      </ol>
+    </div>
+
+    <!-- Action Buttons -->
+    <div class="action-buttons">
+      <a class="btn-regenerate" href="{{ url_for('telegram_bot') }}">
+        <i class="fas fa-sync-alt"></i> Proceeed
+      </a>
+
+    </div>
+  </div>
+</div>
+
+<!-- Animated Background Elements -->
+<div class="telegram-shapes">
+  <div class="shape shape-1"></div>
+  <div class="shape shape-2"></div>
+</div>
+
+{% endblock %}

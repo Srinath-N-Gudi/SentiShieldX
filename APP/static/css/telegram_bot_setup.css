@@ -1,0 +1,322 @@
+/* === Telegram Setup Page === */
+.telegram-setup-hero {
+    background: linear-gradient(135deg, #01162d 0%, #02101d 100%);
+    padding: 80px 0 40px;
+    text-align: center;
+    color: white;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .telegram-setup-hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 15px;
+    font-weight: 800;
+  }
+  
+  .telegram-setup-hero h1 span {
+    color: #d27b7b;
+    position: relative;
+  }
+  
+  .telegram-setup-hero h1 span::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, #d27b7b, transparent);
+  }
+  
+  .telegram-setup-hero p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  /* Main Container */
+  .telegram-setup-container {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 20px;
+  }
+  
+  /* QR Code + Link Section */
+  .telegram-connect-section {
+    background: #02101d;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(210, 123, 123, 0.1);
+    margin-bottom: 40px;
+  }
+  
+  .telegram-qr-card {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .qr-code {
+    background: white;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .qr-code img {
+    width: 200px;
+    height: 200px;
+    display: block;
+  }
+  
+  .telegram-link {
+    flex: 1;
+    min-width: 250px;
+  }
+  
+  .telegram-link h3 {
+    color: #d27b7b;
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+  }
+  
+  .telegram-link p {
+    color: #aaa;
+    margin-bottom: 20px;
+  }
+  
+  .telegram-direct-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: #0088cc;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    text-decoration: none;
+    transition: all 0.3s;
+  }
+  
+  .telegram-direct-link i {
+    font-size: 1.5rem;
+  }
+  
+  .telegram-direct-link:hover {
+    background: #006699;
+    box-shadow: 0 0 20px rgba(0, 136, 204, 0.5);
+    transform: translateY(-2px);
+  }
+  
+  /* Verification Section */
+  .verification-section {
+    background: #02101d;
+    border-radius: 12px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(210, 123, 123, 0.1);
+  }
+  
+  .verification-section h2 {
+    color: #d27b7b;
+    font-size: 2rem;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .verification-section h2 i {
+    font-size: 1.5rem;
+  }
+  
+  .verification-code-display {
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid #d27b7b;
+    border-radius: 8px;
+    padding: 25px;
+    text-align: center;
+    margin-bottom: 30px;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .verification-code-display::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, 
+      transparent 25%, 
+      rgba(210, 123, 123, 0.05) 25%, 
+      rgba(210, 123, 123, 0.05) 50%, 
+      transparent 50%, 
+      transparent 75%, 
+      rgba(210, 123, 123, 0.05) 75%);
+    background-size: 20px 20px;
+    opacity: 0.3;
+  }
+  
+  .code-label {
+    display: block;
+    color: #aaa;
+    margin-bottom: 10px;
+    font-size: 1rem;
+  }
+  
+  .verification-code {
+    font-family: 'Courier New', monospace;
+    font-size: 2.5rem;
+    letter-spacing: 3px;
+    color: #d27b7b;
+    font-weight: bold;
+    margin: 15px 0;
+    text-shadow: 0 0 10px rgba(210, 123, 123, 0.5);
+  }
+  
+  .verification-code-display small {
+    color: #777;
+    font-size: 0.9rem;
+  }
+  
+  /* Instructions */
+  .instructions {
+    background: rgba(0, 0, 0, 0.2);
+    border-left: 3px solid #d27b7b;
+    padding: 20px;
+    border-radius: 0 8px 8px 0;
+    margin-bottom: 30px;
+  }
+  
+  .instructions h3 {
+    color: white;
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+  }
+  
+  .instructions ol {
+    padding-left: 20px;
+    color: #ddd;
+  }
+  
+  .instructions li {
+    margin-bottom: 10px;
+    line-height: 1.6;
+  }
+  
+  .instructions code {
+    background: rgba(210, 123, 123, 0.2);
+    color: #d27b7b;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: monospace;
+  }
+  
+  /* Action Buttons */
+  .action-buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+  
+  .btn-regenerate, .btn-support {
+    flex: 1;
+    min-width: 200px;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  .btn-regenerate {
+    background: linear-gradient(90deg, #d27b7b, #b26262);
+    color: white;
+    outline-style: none;
+  }
+  
+  .btn-regenerate:hover {
+    background: linear-gradient(90deg, #b26262, #d27b7b);
+    box-shadow: 0 0 20px rgba(210, 123, 123, 0.5);
+  }
+  
+  .btn-support {
+    background: transparent;
+    border: 2px solid #d27b7b;
+    color: #d27b7b;
+  }
+  
+  .btn-support:hover {
+    background: rgba(210, 123, 123, 0.1);
+  }
+  
+  /* Animated Background */
+  .telegram-shapes {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+  }
+  
+  .telegram-shapes .shape {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(60px);
+    opacity: 0.15;
+  }
+  
+  .shape-1 {
+    width: 400px;
+    height: 400px;
+    background: #0088cc;
+    top: -100px;
+    left: -100px;
+    animation: float 20s infinite linear;
+  }
+  
+  .shape-2 {
+    width: 300px;
+    height: 300px;
+    background: #d27b7b;
+    bottom: -100px;
+    right: -100px;
+    animation: float 25s infinite reverse linear;
+  }
+  
+  @keyframes float {
+    0% { transform: translate(0, 0) rotate(0deg); }
+    50% { transform: translate(50px, 50px) rotate(180deg); }
+    100% { transform: translate(0, 0) rotate(360deg); }
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .telegram-setup-hero h1 {
+      font-size: 2.5rem;
+    }
+    
+    .telegram-qr-card {
+      flex-direction: column;
+      gap: 20px;
+    }
+    
+    .verification-code {
+      font-size: 2rem;
+    }
+  }

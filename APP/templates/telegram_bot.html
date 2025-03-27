@@ -1,0 +1,120 @@
+{% extends "base.html" %}
+{% block content %}
+
+<!-- Hero Section -->
+<div class="bot-hero" style="background-color: #01162d;">
+  <div class="container">
+    <h1>Telegram Bot <span>Dashboard</span></h1>
+    <p>Manage groups, moderate content, and analyze sentiment in real-time.</p>
+  </div>
+</div>
+
+<!-- Main Dashboard -->
+<div class="bot-dashboard">
+  <!-- Sidebar -->
+  <div class="bot-sidebar">
+    <div class="bot-logo">
+      <img src="{{ url_for('static', filename='Images/telegram.svg') }}" alt="Telegram Logo">
+      <span>SentiShieldX Bot</span>
+    </div>
+    <ul class="bot-menu">
+      <li class="active"><i class="fas fa-home"></i> Overview</li>
+      <li><i class="fas fa-users"></i> Group Management</li>
+      <li><i class="fas fa-robot"></i> Auto-Moderation</li>
+      <li><i class="fas fa-chart-bar"></i> Analytics</li>
+      <li><i class="fas fa-cog"></i> Settings</li>
+    </ul>
+  </div>
+
+  <!-- Content Area -->
+  <div class="bot-content">
+    <!-- Quick Stats -->
+    <div class="bot-stats">
+      <div class="stat-card">
+        <h3>Groups Managed</h3>
+        <span>12</span>
+      </div>
+      <div class="stat-card">
+        <h3>Bans Today</h3>
+        <span>5</span>
+      </div>
+      <div class="stat-card">
+        <h3>Toxicity Rate</h3>
+        <span>8.3%</span>
+      </div>
+    </div>
+
+    <!-- Group Controls -->
+    <div class="bot-section">
+      <h2><i class="fas fa-users"></i> Group Management</h2>
+      <div class="control-panel">
+        <!-- Ban/Kick -->
+        <div class="control-card">
+          <h3>🚫 Ban/Kick Users</h3>
+          <input type="text" placeholder="@username or User ID">
+          <button class="btn-ban">Ban</button>
+          <button class="btn-kick">Kick</button>
+        </div>
+
+        <!-- Mute/Unmute -->
+        <div class="control-card">
+          <h3>🔇 Mute Users</h3>
+          <input type="text" placeholder="@username or User ID">
+          <select>
+            <option>1 hour</option>
+            <option>1 day</option>
+            <option>1 week</option>
+            <option>Forever</option>
+          </select>
+          <button class="btn-mute">Mute</button>
+        </div>
+
+        <!-- Promote/Demote -->
+        <div class="control-card">
+          <h3>👑 Admin Controls</h3>
+          <input type="text" placeholder="@username or User ID">
+          <button class="btn-promote">Promote</button>
+          <button class="btn-demote">Demote</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Auto-Moderation Settings -->
+    <div class="bot-section">
+      <h2><i class="fas fa-robot"></i> Auto-Moderation</h2>
+      <div class="toggle-grid">
+        <div class="toggle-item">
+          <label>Block Spam</label>
+          <label class="switch">
+            <input type="checkbox" checked>
+            <span class="slider"></span>
+          </label>
+        </div>
+        <div class="toggle-item">
+          <label>Filter Toxicity</label>
+          <label class="switch">
+            <input type="checkbox" checked>
+            <span class="slider"></span>
+          </label>
+        </div>
+        <div class="toggle-item">
+          <label>CAPTCHA for New Users</label>
+          <label class="switch">
+            <input type="checkbox">
+            <span class="slider"></span>
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <!-- Analytics -->
+    <div class="bot-section">
+      <h2><i class="fas fa-chart-bar"></i> Sentiment Analytics</h2>
+      <div class="analytics-chart">
+        <canvas id="toxicityChart"></canvas>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
