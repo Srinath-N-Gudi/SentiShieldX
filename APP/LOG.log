@@ -1,0 +1,535 @@
+[2025-04-05 21:54:59,853 - INFO] - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5050
+ * Running on http://192.168.0.106:5050
+[2025-04-05 21:54:59,861 - INFO] - [33mPress CTRL+C to quit[0m
+[2025-04-05 21:54:59,897 - INFO] -  * Restarting with stat
+[2025-04-05 21:56:49,301 - WARNING] -  * Debugger is active!
+[2025-04-05 21:56:49,336 - INFO] -  * Debugger PIN: 106-417-909
+[2025-04-05 21:56:49,733 - INFO] - 127.0.0.1 - - [05/Apr/2025 21:56:49] "GET / HTTP/1.1" 200 -
+[2025-04-05 21:56:51,792 - INFO] - 127.0.0.1 - - [05/Apr/2025 21:56:51] "[33mGET /static/css/telegram_bot.css HTTP/1.1[0m" 404 -
+[2025-04-05 21:56:52,367 - INFO] - 127.0.0.1 - - [05/Apr/2025 21:56:52] "[36mGET /static/css/telegram_bot_setup.css HTTP/1.1[0m" 304 -
+[2025-04-05 21:56:52,368 - INFO] - 127.0.0.1 - - [05/Apr/2025 21:56:52] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+[2025-04-05 21:56:52,370 - INFO] - 127.0.0.1 - - [05/Apr/2025 21:56:52] "[36mGET /static/css/ytca.css HTTP/1.1[0m" 304 -
+[2025-04-05 21:56:52,389 - INFO] - 127.0.0.1 - - [05/Apr/2025 21:56:52] "[36mGET /static/css/bots.css HTTP/1.1[0m" 304 -
+[2025-04-05 21:56:52,451 - INFO] - 127.0.0.1 - - [05/Apr/2025 21:56:52] "[36mGET /static/Images/yt.svg HTTP/1.1[0m" 304 -
+[2025-04-05 21:56:52,502 - INFO] - 127.0.0.1 - - [05/Apr/2025 21:56:52] "[36mGET /static/Images/discord.svg HTTP/1.1[0m" 304 -
+[2025-04-05 21:56:52,540 - INFO] - 127.0.0.1 - - [05/Apr/2025 21:56:52] "GET /static/Images/Comment-Analysis.png HTTP/1.1" 200 -
+[2025-04-05 21:56:52,559 - INFO] - 127.0.0.1 - - [05/Apr/2025 21:56:52] "GET /static/Images/HarmWeb.png HTTP/1.1" 200 -
+[2025-04-05 21:56:52,568 - INFO] - 127.0.0.1 - - [05/Apr/2025 21:56:52] "GET /static/Images/AI-BOT.png HTTP/1.1" 200 -
+[2025-04-05 21:56:50,939 - ERROR] - Exception happened while polling for updates.
+Traceback (most recent call last):
+  File "/home/srinath/Programs/Projects/SentiShieldX/SentiShieldX/venv/lib/python3.13/site-packages/telegram/ext/_utils/networkloop.py", line 115, in network_retry_loop
+    if not await do_action():
+           ^^^^^^^^^^^^^^^^^
+  File "/home/srinath/Programs/Projects/SentiShieldX/SentiShieldX/venv/lib/python3.13/site-packages/telegram/ext/_utils/networkloop.py", line 108, in do_action
+    return action_cb_task.result()
+           ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/srinath/Programs/Projects/SentiShieldX/SentiShieldX/venv/lib/python3.13/site-packages/telegram/ext/_updater.py", line 335, in polling_action_cb
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/home/srinath/Programs/Projects/SentiShieldX/SentiShieldX/venv/lib/python3.13/site-packages/telegram/ext/_extbot.py", line 658, in get_updates
+    updates = await super().get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+    )
+    ^
+  File "/home/srinath/Programs/Projects/SentiShieldX/SentiShieldX/venv/lib/python3.13/site-packages/telegram/_bot.py", line 4593, in get_updates
+    await self._post(
+    ^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    ),
+    ^
+  File "/home/srinath/Programs/Projects/SentiShieldX/SentiShieldX/venv/lib/python3.13/site-packages/telegram/_bot.py", line 691, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "/home/srinath/Programs/Projects/SentiShieldX/SentiShieldX/venv/lib/python3.13/site-packages/telegram/ext/_extbot.py", line 362, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "/home/srinath/Programs/Projects/SentiShieldX/SentiShieldX/venv/lib/python3.13/site-packages/telegram/_bot.py", line 720, in _do_post
+    result = await request.post(
+             ^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "/home/srinath/Programs/Projects/SentiShieldX/SentiShieldX/venv/lib/python3.13/site-packages/telegram/request/_baserequest.py", line 197, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "/home/srinath/Programs/Projects/SentiShieldX/SentiShieldX/venv/lib/python3.13/site-packages/telegram/request/_baserequest.py", line 355, in _request_wrapper
+    raise Conflict(message)
+telegram.error.Conflict: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+[2025-04-05 21:56:52,716 - INFO] - 127.0.0.1 - - [05/Apr/2025 21:56:52] "[36mGET /static/Images/telegram.svg HTTP/1.1[0m" 304 -
+[2025-04-05 21:56:52,831 - INFO] - 127.0.0.1 - - [05/Apr/2025 21:56:52] "[36mGET /static/Images/SSX.png HTTP/1.1[0m" 304 -
+[2025-04-05 21:56:53,395 - INFO] - 127.0.0.1 - - [05/Apr/2025 21:56:53] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+[2025-04-05 21:56:55,175 - INFO] - 127.0.0.1 - - [05/Apr/2025 21:56:55] "GET /login HTTP/1.1" 200 -
+[2025-04-05 21:56:55,458 - INFO] - 127.0.0.1 - - [05/Apr/2025 21:56:55] "[36mGET /static/Images/SSX.png HTTP/1.1[0m" 304 -
+[2025-04-05 21:56:55,460 - INFO] - 127.0.0.1 - - [05/Apr/2025 21:56:55] "[36mGET /static/css/signup_page.css HTTP/1.1[0m" 304 -
+[2025-04-05 21:56:55,570 - INFO] - 127.0.0.1 - - [05/Apr/2025 21:56:55] "[36mGET /static/js/signup_page.js HTTP/1.1[0m" 304 -
+[2025-04-05 21:56:55,572 - INFO] - 127.0.0.1 - - [05/Apr/2025 21:56:55] "[36mGET /static/Images/google-image.svg HTTP/1.1[0m" 304 -
+[2025-04-05 21:56:56,874 - ERROR] - Exception happened while polling for updates.
+Traceback (most recent call last):
+  File "/home/srinath/Programs/Projects/SentiShieldX/SentiShieldX/venv/lib/python3.13/site-packages/telegram/ext/_utils/networkloop.py", line 115, in network_retry_loop
+    if not await do_action():
+           ^^^^^^^^^^^^^^^^^
+  File "/home/srinath/Programs/Projects/SentiShieldX/SentiShieldX/venv/lib/python3.13/site-packages/telegram/ext/_utils/networkloop.py", line 108, in do_action
+    return action_cb_task.result()
+           ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/srinath/Programs/Projects/SentiShieldX/SentiShieldX/venv/lib/python3.13/site-packages/telegram/ext/_updater.py", line 335, in polling_action_cb
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/home/srinath/Programs/Projects/SentiShieldX/SentiShieldX/venv/lib/python3.13/site-packages/telegram/ext/_extbot.py", line 658, in get_updates
+    updates = await super().get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+    )
+    ^
+  File "/home/srinath/Programs/Projects/SentiShieldX/SentiShieldX/venv/lib/python3.13/site-packages/telegram/_bot.py", line 4593, in get_updates
+    await self._post(
+    ^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    ),
+    ^
+  File "/home/srinath/Programs/Projects/SentiShieldX/SentiShieldX/venv/lib/python3.13/site-packages/telegram/_bot.py", line 691, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "/home/srinath/Programs/Projects/SentiShieldX/SentiShieldX/venv/lib/python3.13/site-packages/telegram/ext/_extbot.py", line 362, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "/home/srinath/Programs/Projects/SentiShieldX/SentiShieldX/venv/lib/python3.13/site-packages/telegram/_bot.py", line 720, in _do_post
+    result = await request.post(
+             ^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "/home/srinath/Programs/Projects/SentiShieldX/SentiShieldX/venv/lib/python3.13/site-packages/telegram/request/_baserequest.py", line 197, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "/home/srinath/Programs/Projects/SentiShieldX/SentiShieldX/venv/lib/python3.13/site-packages/telegram/request/_baserequest.py", line 355, in _request_wrapper
+    raise Conflict(message)
+telegram.error.Conflict: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+[2025-04-05 21:56:58,042 - ERROR] - Exception happened while polling for updates.
+Traceback (most recent call last):
+  File "/home/srinath/Programs/Projects/SentiShieldX/SentiShieldX/venv/lib/python3.13/site-packages/telegram/ext/_utils/networkloop.py", line 115, in network_retry_loop
+    if not await do_action():
+           ^^^^^^^^^^^^^^^^^
+  File "/home/srinath/Programs/Projects/SentiShieldX/SentiShieldX/venv/lib/python3.13/site-packages/telegram/ext/_utils/networkloop.py", line 108, in do_action
+    return action_cb_task.result()
+           ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/srinath/Programs/Projects/SentiShieldX/SentiShieldX/venv/lib/python3.13/site-packages/telegram/ext/_updater.py", line 335, in polling_action_cb
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/home/srinath/Programs/Projects/SentiShieldX/SentiShieldX/venv/lib/python3.13/site-packages/telegram/ext/_extbot.py", line 658, in get_updates
+    updates = await super().get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+    )
+    ^
+  File "/home/srinath/Programs/Projects/SentiShieldX/SentiShieldX/venv/lib/python3.13/site-packages/telegram/_bot.py", line 4593, in get_updates
+    await self._post(
+    ^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    ),
+    ^
+  File "/home/srinath/Programs/Projects/SentiShieldX/SentiShieldX/venv/lib/python3.13/site-packages/telegram/_bot.py", line 691, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "/home/srinath/Programs/Projects/SentiShieldX/SentiShieldX/venv/lib/python3.13/site-packages/telegram/ext/_extbot.py", line 362, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "/home/srinath/Programs/Projects/SentiShieldX/SentiShieldX/venv/lib/python3.13/site-packages/telegram/_bot.py", line 720, in _do_post
+    result = await request.post(
+             ^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "/home/srinath/Programs/Projects/SentiShieldX/SentiShieldX/venv/lib/python3.13/site-packages/telegram/request/_baserequest.py", line 197, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "/home/srinath/Programs/Projects/SentiShieldX/SentiShieldX/venv/lib/python3.13/site-packages/telegram/request/_baserequest.py", line 355, in _request_wrapper
+    raise Conflict(message)
+telegram.error.Conflict: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+[2025-04-05 21:56:59,161 - INFO] - 127.0.0.1 - - [05/Apr/2025 21:56:59] "[32mPOST /login HTTP/1.1[0m" 302 -
+[2025-04-05 21:56:59,228 - INFO] - 127.0.0.1 - - [05/Apr/2025 21:56:59] "GET /dashboard HTTP/1.1" 200 -
+[2025-04-05 21:56:59,486 - INFO] - 127.0.0.1 - - [05/Apr/2025 21:56:59] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+[2025-04-05 21:56:59,494 - INFO] - 127.0.0.1 - - [05/Apr/2025 21:56:59] "[36mGET /static/css/ytca.css HTTP/1.1[0m" 304 -
+[2025-04-05 21:56:59,495 - INFO] - 127.0.0.1 - - [05/Apr/2025 21:56:59] "[33mGET /static/css/telegram_bot.css HTTP/1.1[0m" 404 -
+[2025-04-05 21:56:59,502 - INFO] - 127.0.0.1 - - [05/Apr/2025 21:56:59] "[36mGET /static/css/bots.css HTTP/1.1[0m" 304 -
+[2025-04-05 21:56:59,503 - INFO] - 127.0.0.1 - - [05/Apr/2025 21:56:59] "[36mGET /static/css/telegram_bot_setup.css HTTP/1.1[0m" 304 -
+[2025-04-05 21:56:59,509 - INFO] - 127.0.0.1 - - [05/Apr/2025 21:56:59] "[36mGET /static/Images/yt.svg HTTP/1.1[0m" 304 -
+[2025-04-05 21:56:59,515 - INFO] - 127.0.0.1 - - [05/Apr/2025 21:56:59] "[36mGET /static/Images/SSX.png HTTP/1.1[0m" 304 -
+[2025-04-05 21:56:59,521 - INFO] - 127.0.0.1 - - [05/Apr/2025 21:56:59] "[36mGET /static/Images/discord.svg HTTP/1.1[0m" 304 -
+[2025-04-05 21:56:59,537 - INFO] - 127.0.0.1 - - [05/Apr/2025 21:56:59] "[36mGET /static/Images/Comment-Analysis.png HTTP/1.1[0m" 304 -
+[2025-04-05 21:56:59,540 - INFO] - 127.0.0.1 - - [05/Apr/2025 21:56:59] "[36mGET /static/Images/telegram.svg HTTP/1.1[0m" 304 -
+[2025-04-05 21:56:59,544 - INFO] - 127.0.0.1 - - [05/Apr/2025 21:56:59] "[36mGET /static/Images/HarmWeb.png HTTP/1.1[0m" 304 -
+[2025-04-05 21:56:59,546 - INFO] - 127.0.0.1 - - [05/Apr/2025 21:56:59] "[36mGET /static/Images/AI-BOT.png HTTP/1.1[0m" 304 -
+[2025-04-05 21:57:02,064 - INFO] - 127.0.0.1 - - [05/Apr/2025 21:57:02] "GET /bots HTTP/1.1" 200 -
+[2025-04-05 21:57:02,156 - INFO] - 127.0.0.1 - - [05/Apr/2025 21:57:02] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+[2025-04-05 21:57:02,195 - INFO] - 127.0.0.1 - - [05/Apr/2025 21:57:02] "[33mGET /static/css/telegram_bot.css HTTP/1.1[0m" 404 -
+[2025-04-05 21:57:02,200 - INFO] - 127.0.0.1 - - [05/Apr/2025 21:57:02] "[36mGET /static/css/telegram_bot_setup.css HTTP/1.1[0m" 304 -
+[2025-04-05 21:57:02,203 - INFO] - 127.0.0.1 - - [05/Apr/2025 21:57:02] "[36mGET /static/Images/telegram.svg HTTP/1.1[0m" 304 -
+[2025-04-05 21:57:02,208 - INFO] - 127.0.0.1 - - [05/Apr/2025 21:57:02] "[36mGET /static/css/bots.css HTTP/1.1[0m" 304 -
+[2025-04-05 21:57:02,212 - INFO] - 127.0.0.1 - - [05/Apr/2025 21:57:02] "[36mGET /static/css/ytca.css HTTP/1.1[0m" 304 -
+[2025-04-05 21:57:02,215 - INFO] - 127.0.0.1 - - [05/Apr/2025 21:57:02] "[36mGET /static/Images/discord.svg HTTP/1.1[0m" 304 -
+[2025-04-05 21:57:02,218 - INFO] - 127.0.0.1 - - [05/Apr/2025 21:57:02] "[36mGET /static/Images/SSX.png HTTP/1.1[0m" 304 -
+[2025-04-05 21:57:02,712 - ERROR] - Exception happened while polling for updates.
+Traceback (most recent call last):
+  File "/home/srinath/Programs/Projects/SentiShieldX/SentiShieldX/venv/lib/python3.13/site-packages/telegram/ext/_utils/networkloop.py", line 115, in network_retry_loop
+    if not await do_action():
+           ^^^^^^^^^^^^^^^^^
+  File "/home/srinath/Programs/Projects/SentiShieldX/SentiShieldX/venv/lib/python3.13/site-packages/telegram/ext/_utils/networkloop.py", line 108, in do_action
+    return action_cb_task.result()
+           ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/srinath/Programs/Projects/SentiShieldX/SentiShieldX/venv/lib/python3.13/site-packages/telegram/ext/_updater.py", line 335, in polling_action_cb
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/home/srinath/Programs/Projects/SentiShieldX/SentiShieldX/venv/lib/python3.13/site-packages/telegram/ext/_extbot.py", line 658, in get_updates
+    updates = await super().get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+    )
+    ^
+  File "/home/srinath/Programs/Projects/SentiShieldX/SentiShieldX/venv/lib/python3.13/site-packages/telegram/_bot.py", line 4593, in get_updates
+    await self._post(
+    ^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    ),
+    ^
+  File "/home/srinath/Programs/Projects/SentiShieldX/SentiShieldX/venv/lib/python3.13/site-packages/telegram/_bot.py", line 691, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "/home/srinath/Programs/Projects/SentiShieldX/SentiShieldX/venv/lib/python3.13/site-packages/telegram/ext/_extbot.py", line 362, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "/home/srinath/Programs/Projects/SentiShieldX/SentiShieldX/venv/lib/python3.13/site-packages/telegram/_bot.py", line 720, in _do_post
+    result = await request.post(
+             ^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "/home/srinath/Programs/Projects/SentiShieldX/SentiShieldX/venv/lib/python3.13/site-packages/telegram/request/_baserequest.py", line 197, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "/home/srinath/Programs/Projects/SentiShieldX/SentiShieldX/venv/lib/python3.13/site-packages/telegram/request/_baserequest.py", line 355, in _request_wrapper
+    raise Conflict(message)
+telegram.error.Conflict: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+[2025-04-05 21:57:04,386 - ERROR] - Exception happened while polling for updates.
+Traceback (most recent call last):
+  File "/home/srinath/Programs/Projects/SentiShieldX/SentiShieldX/venv/lib/python3.13/site-packages/telegram/ext/_utils/networkloop.py", line 115, in network_retry_loop
+    if not await do_action():
+           ^^^^^^^^^^^^^^^^^
+  File "/home/srinath/Programs/Projects/SentiShieldX/SentiShieldX/venv/lib/python3.13/site-packages/telegram/ext/_utils/networkloop.py", line 108, in do_action
+    return action_cb_task.result()
+           ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/srinath/Programs/Projects/SentiShieldX/SentiShieldX/venv/lib/python3.13/site-packages/telegram/ext/_updater.py", line 335, in polling_action_cb
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/home/srinath/Programs/Projects/SentiShieldX/SentiShieldX/venv/lib/python3.13/site-packages/telegram/ext/_extbot.py", line 658, in get_updates
+    updates = await super().get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+    )
+    ^
+  File "/home/srinath/Programs/Projects/SentiShieldX/SentiShieldX/venv/lib/python3.13/site-packages/telegram/_bot.py", line 4593, in get_updates
+    await self._post(
+    ^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    ),
+    ^
+  File "/home/srinath/Programs/Projects/SentiShieldX/SentiShieldX/venv/lib/python3.13/site-packages/telegram/_bot.py", line 691, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "/home/srinath/Programs/Projects/SentiShieldX/SentiShieldX/venv/lib/python3.13/site-packages/telegram/ext/_extbot.py", line 362, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "/home/srinath/Programs/Projects/SentiShieldX/SentiShieldX/venv/lib/python3.13/site-packages/telegram/_bot.py", line 720, in _do_post
+    result = await request.post(
+             ^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "/home/srinath/Programs/Projects/SentiShieldX/SentiShieldX/venv/lib/python3.13/site-packages/telegram/request/_baserequest.py", line 197, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "/home/srinath/Programs/Projects/SentiShieldX/SentiShieldX/venv/lib/python3.13/site-packages/telegram/request/_baserequest.py", line 355, in _request_wrapper
+    raise Conflict(message)
+telegram.error.Conflict: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+[2025-04-05 21:57:04,773 - INFO] - 127.0.0.1 - - [05/Apr/2025 21:57:04] "GET /tbs HTTP/1.1" 200 -
+[2025-04-05 21:57:04,833 - INFO] - 127.0.0.1 - - [05/Apr/2025 21:57:04] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+[2025-04-05 21:57:04,863 - INFO] - 127.0.0.1 - - [05/Apr/2025 21:57:04] "[36mGET /static/css/ytca.css HTTP/1.1[0m" 304 -
+[2025-04-05 21:57:04,864 - INFO] - 127.0.0.1 - - [05/Apr/2025 21:57:04] "[33mGET /static/css/telegram_bot.css HTTP/1.1[0m" 404 -
+[2025-04-05 21:57:04,883 - INFO] - 127.0.0.1 - - [05/Apr/2025 21:57:04] "[36mGET /static/css/telegram_bot_setup.css HTTP/1.1[0m" 304 -
+[2025-04-05 21:57:04,884 - INFO] - 127.0.0.1 - - [05/Apr/2025 21:57:04] "[36mGET /static/css/bots.css HTTP/1.1[0m" 304 -
+[2025-04-05 21:57:04,885 - INFO] - 127.0.0.1 - - [05/Apr/2025 21:57:04] "[36mGET /static/Images/SSX.png HTTP/1.1[0m" 304 -
+[2025-04-05 21:57:04,988 - INFO] - 127.0.0.1 - - [05/Apr/2025 21:57:04] "GET /static/Images/telegram-qr.png HTTP/1.1" 200 -
+[2025-04-05 21:57:09,809 - ERROR] - Exception happened while polling for updates.
+Traceback (most recent call last):
+  File "/home/srinath/Programs/Projects/SentiShieldX/SentiShieldX/venv/lib/python3.13/site-packages/telegram/ext/_utils/networkloop.py", line 115, in network_retry_loop
+    if not await do_action():
+           ^^^^^^^^^^^^^^^^^
+  File "/home/srinath/Programs/Projects/SentiShieldX/SentiShieldX/venv/lib/python3.13/site-packages/telegram/ext/_utils/networkloop.py", line 108, in do_action
+    return action_cb_task.result()
+           ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/srinath/Programs/Projects/SentiShieldX/SentiShieldX/venv/lib/python3.13/site-packages/telegram/ext/_updater.py", line 335, in polling_action_cb
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/home/srinath/Programs/Projects/SentiShieldX/SentiShieldX/venv/lib/python3.13/site-packages/telegram/ext/_extbot.py", line 658, in get_updates
+    updates = await super().get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+    )
+    ^
+  File "/home/srinath/Programs/Projects/SentiShieldX/SentiShieldX/venv/lib/python3.13/site-packages/telegram/_bot.py", line 4593, in get_updates
+    await self._post(
+    ^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    ),
+    ^
+  File "/home/srinath/Programs/Projects/SentiShieldX/SentiShieldX/venv/lib/python3.13/site-packages/telegram/_bot.py", line 691, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "/home/srinath/Programs/Projects/SentiShieldX/SentiShieldX/venv/lib/python3.13/site-packages/telegram/ext/_extbot.py", line 362, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "/home/srinath/Programs/Projects/SentiShieldX/SentiShieldX/venv/lib/python3.13/site-packages/telegram/_bot.py", line 720, in _do_post
+    result = await request.post(
+             ^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "/home/srinath/Programs/Projects/SentiShieldX/SentiShieldX/venv/lib/python3.13/site-packages/telegram/request/_baserequest.py", line 197, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "/home/srinath/Programs/Projects/SentiShieldX/SentiShieldX/venv/lib/python3.13/site-packages/telegram/request/_baserequest.py", line 355, in _request_wrapper
+    raise Conflict(message)
+telegram.error.Conflict: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+[2025-04-05 21:57:12,223 - ERROR] - Exception happened while polling for updates.
+Traceback (most recent call last):
+  File "/home/srinath/Programs/Projects/SentiShieldX/SentiShieldX/venv/lib/python3.13/site-packages/telegram/ext/_utils/networkloop.py", line 115, in network_retry_loop
+    if not await do_action():
+           ^^^^^^^^^^^^^^^^^
+  File "/home/srinath/Programs/Projects/SentiShieldX/SentiShieldX/venv/lib/python3.13/site-packages/telegram/ext/_utils/networkloop.py", line 108, in do_action
+    return action_cb_task.result()
+           ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/srinath/Programs/Projects/SentiShieldX/SentiShieldX/venv/lib/python3.13/site-packages/telegram/ext/_updater.py", line 335, in polling_action_cb
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/home/srinath/Programs/Projects/SentiShieldX/SentiShieldX/venv/lib/python3.13/site-packages/telegram/ext/_extbot.py", line 658, in get_updates
+    updates = await super().get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+    )
+    ^
+  File "/home/srinath/Programs/Projects/SentiShieldX/SentiShieldX/venv/lib/python3.13/site-packages/telegram/_bot.py", line 4593, in get_updates
+    await self._post(
+    ^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    ),
+    ^
+  File "/home/srinath/Programs/Projects/SentiShieldX/SentiShieldX/venv/lib/python3.13/site-packages/telegram/_bot.py", line 691, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "/home/srinath/Programs/Projects/SentiShieldX/SentiShieldX/venv/lib/python3.13/site-packages/telegram/ext/_extbot.py", line 362, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "/home/srinath/Programs/Projects/SentiShieldX/SentiShieldX/venv/lib/python3.13/site-packages/telegram/_bot.py", line 720, in _do_post
+    result = await request.post(
+             ^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "/home/srinath/Programs/Projects/SentiShieldX/SentiShieldX/venv/lib/python3.13/site-packages/telegram/request/_baserequest.py", line 197, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "/home/srinath/Programs/Projects/SentiShieldX/SentiShieldX/venv/lib/python3.13/site-packages/telegram/request/_baserequest.py", line 355, in _request_wrapper
+    raise Conflict(message)
+telegram.error.Conflict: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+[2025-04-05 21:57:15,767 - ERROR] - Exception happened while polling for updates.
+Traceback (most recent call last):
+  File "/home/srinath/Programs/Projects/SentiShieldX/SentiShieldX/venv/lib/python3.13/site-packages/telegram/ext/_utils/networkloop.py", line 115, in network_retry_loop
+    if not await do_action():
+           ^^^^^^^^^^^^^^^^^
+  File "/home/srinath/Programs/Projects/SentiShieldX/SentiShieldX/venv/lib/python3.13/site-packages/telegram/ext/_utils/networkloop.py", line 108, in do_action
+    return action_cb_task.result()
+           ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/srinath/Programs/Projects/SentiShieldX/SentiShieldX/venv/lib/python3.13/site-packages/telegram/ext/_updater.py", line 335, in polling_action_cb
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/home/srinath/Programs/Projects/SentiShieldX/SentiShieldX/venv/lib/python3.13/site-packages/telegram/ext/_extbot.py", line 658, in get_updates
+    updates = await super().get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+    )
+    ^
+  File "/home/srinath/Programs/Projects/SentiShieldX/SentiShieldX/venv/lib/python3.13/site-packages/telegram/_bot.py", line 4593, in get_updates
+    await self._post(
+    ^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    ),
+    ^
+  File "/home/srinath/Programs/Projects/SentiShieldX/SentiShieldX/venv/lib/python3.13/site-packages/telegram/_bot.py", line 691, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "/home/srinath/Programs/Projects/SentiShieldX/SentiShieldX/venv/lib/python3.13/site-packages/telegram/ext/_extbot.py", line 362, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "/home/srinath/Programs/Projects/SentiShieldX/SentiShieldX/venv/lib/python3.13/site-packages/telegram/_bot.py", line 720, in _do_post
+    result = await request.post(
+             ^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "/home/srinath/Programs/Projects/SentiShieldX/SentiShieldX/venv/lib/python3.13/site-packages/telegram/request/_baserequest.py", line 197, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "/home/srinath/Programs/Projects/SentiShieldX/SentiShieldX/venv/lib/python3.13/site-packages/telegram/request/_baserequest.py", line 355, in _request_wrapper
+    raise Conflict(message)
+telegram.error.Conflict: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+[2025-04-05 21:57:19,309 - ERROR] - Exception happened while polling for updates.
+Traceback (most recent call last):
+  File "/home/srinath/Programs/Projects/SentiShieldX/SentiShieldX/venv/lib/python3.13/site-packages/telegram/ext/_utils/networkloop.py", line 115, in network_retry_loop
+    if not await do_action():
+           ^^^^^^^^^^^^^^^^^
+  File "/home/srinath/Programs/Projects/SentiShieldX/SentiShieldX/venv/lib/python3.13/site-packages/telegram/ext/_utils/networkloop.py", line 108, in do_action
+    return action_cb_task.result()
+           ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/srinath/Programs/Projects/SentiShieldX/SentiShieldX/venv/lib/python3.13/site-packages/telegram/ext/_updater.py", line 335, in polling_action_cb
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/home/srinath/Programs/Projects/SentiShieldX/SentiShieldX/venv/lib/python3.13/site-packages/telegram/ext/_extbot.py", line 658, in get_updates
+    updates = await super().get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+    )
+    ^
+  File "/home/srinath/Programs/Projects/SentiShieldX/SentiShieldX/venv/lib/python3.13/site-packages/telegram/_bot.py", line 4593, in get_updates
+    await self._post(
+    ^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    ),
+    ^
+  File "/home/srinath/Programs/Projects/SentiShieldX/SentiShieldX/venv/lib/python3.13/site-packages/telegram/_bot.py", line 691, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "/home/srinath/Programs/Projects/SentiShieldX/SentiShieldX/venv/lib/python3.13/site-packages/telegram/ext/_extbot.py", line 362, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "/home/srinath/Programs/Projects/SentiShieldX/SentiShieldX/venv/lib/python3.13/site-packages/telegram/_bot.py", line 720, in _do_post
+    result = await request.post(
+             ^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "/home/srinath/Programs/Projects/SentiShieldX/SentiShieldX/venv/lib/python3.13/site-packages/telegram/request/_baserequest.py", line 197, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "/home/srinath/Programs/Projects/SentiShieldX/SentiShieldX/venv/lib/python3.13/site-packages/telegram/request/_baserequest.py", line 355, in _request_wrapper
+    raise Conflict(message)
+telegram.error.Conflict: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running

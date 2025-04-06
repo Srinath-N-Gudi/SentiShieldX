@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <title>SentiShieldX | Your Groups</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/telegram_groups.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="telegram-interface">
+        <div class="cosmic-header">
+            <div class="logo-wrapper">
+                <div class="logo-orb">
+                    <i class="fas fa-robot"></i>
+                </div>
+                <h1>Your <span>Telegram</span> Sanctums</h1>
+            </div>
+        </div>
+
+        <div class="galaxy-container" id="groupsContainer">
+            {% for group in groups %}
+            <div class="singularity-card" onclick="window.location.href='/group_settings/{{ group.id }}'">
+                <div class="group-header">
+                    <h3 class="group-name">{{ group.name }}</h3>
+                    <span class="group-type">
+                        {% if group.type == 'supergroup' %}
+                        <i class="fas fa-users"></i> Supergroup
+                        {% elif group.type == 'channel' %}
+                        <i class="fas fa-broadcast-tower"></i> Channel
+                        {% else %}
+                        <i class="fas fa-user-friends"></i> Group
+                        {% endif %}
+                    </span>
+                </div>
+                
+                <div class="group-divider"></div>
+                
+                <div class="group-meta">
+                    <div class="meta-item">
+                        <i class="fas fa-user-astronaut"></i>
+                        <span>Added by YOU</span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fas fa-clock"></i>
+                        <span>{{ group.added }}</span>
+                    </div>
+                </div>
+            </div>
+            {% else %}
+            <div class="supernova-empty">
+                <div class="blackhole-icon">
+                    <i class="fas fa-comment-slash"></i>
+                </div>
+                <h2>The Void Whispers</h2>
+                <p>No sanctums found where your bot resides. Add it to a group to begin cosmic moderation.</p>
+                <button class="nebula-button" onclick="window.open('https://t.me/SentiShield_Bot', '_blank')">
+                    <i class="fas fa-paper-plane"></i> Summon to Group
+                </button>
+            </div>
+            {% endfor %}
+        </div>
+
+        <div class="quantum-footer">
+            <p>SentiShieldX Cosmic Control Panel</p>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/telegram_groups.js') }}"></script>
+</body>
+</html>

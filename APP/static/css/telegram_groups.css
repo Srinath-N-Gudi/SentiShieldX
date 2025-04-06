@@ -1,0 +1,332 @@
+/* Cosmic Color Palette */
+:root {
+  --blood-rose: #d27b7b;
+  --midnight-ocean: #02101d;
+  --abyss-blue: #01162d;
+  --starlight: #f8f1f1;
+  --nebula-pink: #ff6b9e;
+  --quantum-purple: #9d4edd;
+  --cosmic-teal: #2ec4b6;
+}
+
+/* Base Styles */
+body {
+  background: radial-gradient(
+      ellipse at center,
+      var(--midnight-ocean) 0%,
+      var(--abyss-blue) 100%
+  );
+  color: var(--starlight);
+  font-family: 'Montserrat', system-ui, sans-serif;
+  margin: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Main Container */
+.telegram-interface {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem;
+  animation: cosmicFadeIn 1.2s ease-out;
+}
+
+@keyframes cosmicFadeIn {
+  from { 
+      opacity: 0; 
+      transform: translateY(30px) scale(0.98);
+  }
+  to { 
+      opacity: 1; 
+      transform: translateY(0) scale(1);
+  }
+}
+
+/* Header Styles */
+.cosmic-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4rem;
+  position: relative;
+}
+
+.cosmic-header::after {
+  content: '';
+  position: absolute;
+  bottom: -1.5rem;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(
+      to right,
+      transparent,
+      var(--blood-rose),
+      transparent
+  );
+  opacity: 0.3;
+}
+
+.logo-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.logo-orb {
+  width: 60px;
+  height: 60px;
+  background: radial-gradient(
+      circle at center,
+      var(--blood-rose) 0%,
+      #a84e4e 100%
+  );
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 1.8rem;
+  color: white;
+  box-shadow: 
+      0 0 20px var(--blood-rose),
+      inset 0 0 10px rgba(255, 255, 255, 0.3);
+  animation: orbPulse 6s infinite alternate;
+}
+
+@keyframes orbPulse {
+  0% { transform: scale(1); box-shadow: 0 0 20px var(--blood-rose); }
+  50% { transform: scale(1.05); box-shadow: 0 0 40px var(--blood-rose); }
+  100% { transform: scale(1); box-shadow: 0 0 20px var(--blood-rose); }
+}
+
+h1 {
+  margin: 0;
+  font-weight: 300;
+  font-size: 2.5rem;
+  background: linear-gradient(
+      to right,
+      var(--starlight),
+      var(--blood-rose)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  letter-spacing: 1px;
+}
+
+h1 span {
+  font-weight: 600;
+}
+
+/* Button Styles */
+.nebula-button {
+  background: linear-gradient(
+      135deg,
+      var(--blood-rose),
+      var(--nebula-pink)
+  );
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.4s;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  box-shadow: 
+      0 4px 15px rgba(210, 123, 123, 0.3),
+      inset 0 1px 1px rgba(255, 255, 255, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.nebula-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 
+      0 7px 25px rgba(210, 123, 123, 0.5),
+      inset 0 1px 1px rgba(255, 255, 255, 0.2);
+}
+
+/* Groups Container */
+.galaxy-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 4rem;
+}
+
+/* Group Cards */
+.singularity-card {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto auto;
+  gap: 1rem;
+  padding: 2rem;
+  background: linear-gradient(
+      135deg,
+      rgba(210, 123, 123, 0.08) 0%,
+      rgba(2, 16, 29, 0.5) 100%
+  );
+  border-left: 4px solid var(--blood-rose);
+  border-radius: 12px;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  cursor: pointer;
+}
+
+.singularity-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 
+      0 10px 30px rgba(210, 123, 123, 0.2),
+      0 0 0 1px rgba(210, 123, 123, 0.3);
+  background: linear-gradient(
+      135deg,
+      rgba(210, 123, 123, 0.15) 0%,
+      rgba(2, 16, 29, 0.6) 100%
+  );
+}
+
+.group-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.group-name {
+  font-size: 1.5rem;
+  margin: 0;
+  background: linear-gradient(to right, #f8f1f1, #d27b7b);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-weight: 600;
+}
+
+.group-type {
+  font-size: 0.9rem;
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  background: rgba(210, 123, 123, 0.2);
+  color: var(--blood-rose);
+}
+
+.group-divider {
+  height: 1px;
+  background: linear-gradient(
+      to right,
+      transparent,
+      rgba(210, 123, 123, 0.3),
+      transparent
+  );
+  margin: 0.5rem 0;
+}
+
+.group-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.meta-item {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.meta-item i {
+  width: 20px;
+  color: var(--blood-rose);
+  text-align: center;
+}
+
+/* Empty State */
+.supernova-empty {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 5rem 2rem;
+  background: linear-gradient(
+      135deg,
+      rgba(210, 123, 123, 0.05) 0%,
+      rgba(2, 16, 29, 0.3) 100%
+  );
+  border-radius: 16px;
+  border: 1px dashed var(--blood-rose);
+  margin-top: 2rem;
+}
+
+.blackhole-icon {
+  font-size: 4rem;
+  color: var(--blood-rose);
+  margin-bottom: 1.5rem;
+  opacity: 0.7;
+  display: inline-block;
+  transition: transform 2s;
+}
+
+.blackhole-icon:hover {
+  transform: rotate(360deg);
+}
+
+.supernova-empty h2 {
+  color: var(--blood-rose);
+  font-weight: 300;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.supernova-empty p {
+  max-width: 500px;
+  margin: 0 auto 2.5rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Footer */
+.quantum-footer {
+  text-align: center;
+  padding: 2rem;
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+  position: relative;
+}
+
+.quantum-footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+  height: 1px;
+  background: linear-gradient(
+      to right,
+      transparent,
+      var(--blood-rose),
+      transparent
+  );
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .cosmic-header {
+      flex-direction: column;
+      gap: 2rem;
+      margin-bottom: 3rem;
+  }
+  
+  h1 {
+      font-size: 2rem;
+  }
+  
+  .singularity-card {
+      padding: 1.5rem;
+  }
+  
+  .group-name {
+      font-size: 1.3rem;
+  }
+}

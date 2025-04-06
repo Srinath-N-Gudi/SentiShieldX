@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <title>SentiShieldX | Group Settings</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/telegram_settings.css') }}">
+</head>
+<body>
+    <div class="cosmic-wrapper">
+        <div class="cosmic-particles">
+            <div class="particle p1"></div>
+            <div class="particle p2"></div>
+            <div class="particle p3"></div>
+        </div>
+
+        <div class="cosmic-container">
+            <div class="group-header">
+                <div class="group-orb">
+                    <div class="orb-core"></div>
+                    <div class="orb-glow"></div>
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <div class="group-info">
+                    <h1 id="groupName">{{ name }}</h1>
+                    <div class="group-meta">
+                        <span class="group-badge" id="groupType">
+                            <i class="fas {{ 'fa-users' if type == 'supergroup' else 'fa-user-friends' if type == 'group' else 'fa-broadcast-tower' }}"></i> 
+                            {{ type|capitalize }}
+                        </span>
+                        <span class="group-badge">
+                            <i class="fas fa-hashtag"></i> ID: <span id="groupID">{{ id }}</span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <form action="{{ url_for('save_hate_speech_settings', group_id=id) }}" method="POST" class="protection-card" id="settingsForm">
+                <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                
+                <div class="card-header">
+                    <h2><i class="fas fa-comment-slash"></i> Hate Speech Armor</h2>
+                    <label class="cosmic-switch">
+                        <input type="checkbox" id="protectionEnabled" name="protection_enabled" {% if settings.protection_enabled %}checked{% endif %}>
+                        <span class="slider"></span>
+                    </label>
+                </div>
+            
+                <div class="card-body">
+                    <div class="setting-section">
+                        <h3><i class="fas fa-exclamation-triangle"></i> Mute Duration ( Hours )</h3>
+                        <div class="setting-group">
+                            <label>Duration : <input type="number" min="1" value="{{ settings.muteDuration }}" name="muteDuration" class="cosmic-input small" required> hours</label>
+                            <div class="setting-item full-width">
+                                <label>Warning Message <span class="required">*</span></label>
+                                <textarea class="cosmic-textarea" name="warning_message" placeholder="Custom warning message..." required>{{ settings.warning_message }}</textarea>
+                                <div class="preset-messages">
+                                    <small>Presets:</small>
+                                    <span class="preset">"This violates our community guidelines"</span>
+                                    <span class="preset">"Hate speech is not tolerated here"</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="setting-section">
+                        <h3><i class="fas fa-user-times"></i> Repeat Offenses</h3>
+                        <div class="setting-group">
+                            <div class="setting-item">
+                                <label>After <input type="number" min="1" value="{{ settings.repeat_offense_threshold }}" name="repeat_offense_threshold" class="cosmic-input small" required> mutes:</label>
+                                <select class="cosmic-select" name="repeat_action" required>
+                                    <option value="kick" {% if settings.repeat_action == 'kick' %}selected{% endif %}>Kick</option>
+                                    <option value="ban" {% if settings.repeat_action == 'ban' or not settings.repeat_action %}selected{% endif %}>Ban (1 Month )</option>
+                                </select>
+                            </div>
+                            <div class="setting-item">
+                                <label class="switch-label">
+                                    <span>Allow Banning</span>
+                                    <label class="cosmic-switch small">
+                                        <input type="checkbox" id="allowBanning" name="allow_banning" {% if settings.allow_banning %}checked{% endif %}>
+                                        <span class="slider"></span>
+                                    </label>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="setting-section">
+                        <h3><i class="fas fa-bell"></i> Admin's message for Banned User </h3>
+                        <div class="setting-group">
+                            <div class="setting-item full-width">
+                                <label>Alert Message <span class="required">*</span></label>
+                                <textarea class="cosmic-textarea" name="admin_message" placeholder="Ban message..." required>{{ settings.admin_message }}</textarea>
+                                <div class="placeholders">
+                                    <small>Available placeholders:</small>
+                                    <span class="placeholder">{GroupName}</span>
+                                    <span class="placeholder">{Admins}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-footer">
+                    <button type="submit" class="cosmic-save-btn" id="saveBtn">
+                        <i class="fas fa-save"></i> Save Protection Settings
+                        <div class="btn-glow"></div>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="toast" class="toast-hidden">
+        <i id="toast-icon"></i>
+        <span id="toast-message"></span>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/telegram_settings.js') }}"></script>
+</body>
+</html>

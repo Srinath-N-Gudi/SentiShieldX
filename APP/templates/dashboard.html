@@ -159,6 +159,7 @@
               <div class="footer-column">
                 <h3>Follow us on Newsletter</h3>
                 <form class="newsletter-form">
+                  <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
                   <input type="email" placeholder="Enter your email" required>
                   <button type="submit">Submit</button>
                 </form>

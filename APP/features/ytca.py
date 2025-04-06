@@ -6,9 +6,16 @@ from typing import Dict
 
 class CommentAnalyzer:
     def __init__(self, cyber: Cyber):
+        """Initializes the CommentAnalyzer with a given Cyber instance."""
         self.cyber = cyber
         self.downloader = YoutubeCommentDownloader()
     def analyse_comment(self, youtube_url: str, num_comments: int = 1000) -> dict:
+        """Analyses comments from a given YouTube video.
+
+        Args:
+            youtube_url (str): The URL of the YouTube video.
+            num_comments (int, optional): The number of comments to analyze. Defaults to 1000.
+        """
         results = {
             'total_comments': 0,
             'hate_comments': 0,

@@ -13,14 +13,19 @@ document.getElementById('analysis-form').addEventListener('submit', async functi
   document.getElementById('results-section').style.display = 'block';
 
   try {
-    // Real API call
+    const csrfToken = document.querySelector('input[name="csrf_token"]').value;
+
+    // Real API call with CSRF token included in the body
     const response = await fetch('/analyze', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: `url=${encodeURIComponent(url)}`
+      body: `csrf_token=${encodeURIComponent(csrfToken)}&url=${encodeURIComponent(url)}`
     });
     
-    if (!response.ok) throw new Error('Analysis failed');
+    if (!response.ok) {
+      console.error("Response status:", response.status, await response.text());
+      throw new Error('Analysis failed');
+    }
     
     const data = await response.json();
     showResults(data); // Only hides spinner when results arrive

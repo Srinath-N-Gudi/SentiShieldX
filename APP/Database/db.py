@@ -7,6 +7,9 @@ import uuid
 db = SQLAlchemy()
 
 class User(db.Model, UserMixin):
+    """
+    DB Class for Storing Signed up and session information
+    """
     __tablename__ = 'users'
     
     id = db.Column(db.Integer, primary_key=True)
